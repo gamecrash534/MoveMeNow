@@ -20,11 +20,9 @@ public class ReloadCommand extends Command implements TabExecutor {
             sender.sendMessage(new TextComponent("Please use /mmn reload."));
             return;
         }
-        switch (args[0]) {
-            case "reload":
-                plugin.loadConfig();
-                sender.sendMessage(new TextComponent("Reloaded config!"));
-                break;
+        if (args[0].equals("reload")) {
+            plugin.loadConfig();
+            sender.sendMessage(new TextComponent("Reloaded config!"));
         }
     }
 
