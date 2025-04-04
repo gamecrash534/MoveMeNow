@@ -18,10 +18,13 @@ public class ReloadCommand extends Command implements TabExecutor {
     public void execute(CommandSender sender, String[] args) {
         if (args.length != 1) {
             sender.sendMessage(new TextComponent("Please use /mmn reload."));
+            return;
         }
         switch (args[0]) {
             case "reload":
                 plugin.loadConfig();
+                sender.sendMessage(new TextComponent("Reloaded config!"));
+                break;
         }
     }
 
